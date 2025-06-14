@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me - Rohan</title>
+  <link rel="stylesheet" href="About.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <img src="../image/logo.png" class="logo" alt="Rohan Logo" />
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li class="active"><a href="#">About</a></li>
+          <li><a href="../Pages/achievement.html">Achievements</a></li>
+        </ul>
+      </nav>
+      <div class="header-text">
+        <p>About Me</p>
+        <h1>Know more <span>About</span> me</h1>
+      </div>
+    </div>
+  </div>
+
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="../image/user.png" alt="User" />
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-title">Who Am I?</h1>
+          <p>
+            I'm Rohan, a tech enthusiast passionate about developing full-stack web applications and dynamic software solutions. 
+            My journey began with coding in C and Java and has since expanded to Python development and database management with MySQL. 
+            I'm constantly exploring new technologies to grow my skill set.
+          </p>
+
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+            <p class="tab-links" onclick="opentab('interests')">Interests</p>
+          </div>
+
+          <div class="tab-contents active-tab" id="education">
+            <ul>
+              <li><span>Bachelor's Degree</span><br />Computer Science - Ongoing</li>
+              <li><span>Certifications</span><br />Python, Web Development, Java</li>
+            </ul>
+          </div>
+
+          <div class="tab-contents" id="interests">
+            <ul>
+              <li><span>Coding</span><br />Building apps, websites, and tools</li>
+              <li><span>Design</span><br />UI/UX design for web interfaces</li>
+              <li><span>Learning</span><br />Always exploring new tech trends</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function opentab(tabName) {
+      const tabLinks = document.querySelectorAll(".tab-links");
+      const tabContents = document.querySelectorAll(".tab-contents");
+
+      tabLinks.forEach(link => link.classList.remove("active-link"));
+      tabContents.forEach(tab => tab.classList.remove("active-tab"));
+
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabName).classList.add("active-tab");
+    }
+  </script>
+</body>
+</html>
